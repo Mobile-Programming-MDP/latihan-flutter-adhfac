@@ -20,3 +20,8 @@ flutter:
   uses-material-design: true
   assets:
     - images/
+  fonts: 
+  - family: Cascadia
+    fonts:
+      - asset: assets/fonts/CascadiaMonoPL-SemiBold.otf
+
