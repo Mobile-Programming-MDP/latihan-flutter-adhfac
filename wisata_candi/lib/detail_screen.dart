@@ -149,12 +149,13 @@ class DetailScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Divider(color: Colors.deepPurple.shade100),
-                  Text(
+                  const Text(
                     'Galeri',
                     style: TextStyle(
                       fontSize: 16, fontWeight: FontWeight.bold, fontFamily: 'Cascadia'
                     ),
                   ),
+                  
                   SizedBox(height: 10,),
                   SizedBox(
                     height: 100,
