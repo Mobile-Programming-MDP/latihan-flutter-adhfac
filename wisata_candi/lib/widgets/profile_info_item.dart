@@ -20,6 +20,30 @@ class ProfileInfoItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Row(
+      children: [
+        SizedBox(
+          width: MediaQuery.of(context).size.width / 3,
+          child: Row(
+            children: [
+              Icon(icon, color: iconColor,),
+              SizedBox(width: 8,),
+              Text(
+                label,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Cascadia'
+                ),
+              )
+            ],
+          ),
+        ),
+        Expanded(
+          child: Text(': $value', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+        ),
+        if(showEditIcon) InkWell(onTap: onEditPressed, child: Icon(Icons.edit),)
+      ],
+    );
   }
 }
