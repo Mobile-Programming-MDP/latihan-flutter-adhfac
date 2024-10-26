@@ -9,43 +9,35 @@ class LatihanScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Latihan UTS'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        
-        child: Column(
-          
-          children: [
-
-            const Center(child: Text('INFORMATIKA', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21),)),
-
-            const SizedBox(height: 8,),
-
-            Image.asset(
-              'images/latihan.jpg',
-              height: 250,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
-
-            const SizedBox(height: 19,),
-
-            const Text('Universitas Multi Data Palembang', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21)),
-
-            const Text('Kota Palembang, Prov.Sumatera Selatan', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21)),
-
-            const SizedBox(height: 19,),
-
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.red[900],
+      body: SingleChildScrollView( // Tambahkan SingleChildScrollView di sini
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              const Center(child: Text('INFORMATIKA', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21),)),
+              const SizedBox(height: 8,),
+              Image.asset(
+                'images/latihan.jpg',
+                height: 250,
+                width: double.infinity,
+                fit: BoxFit.cover,
               ),
-              child: Padding(
+              const SizedBox(height: 19,),
+              const Text('Universitas Multi Data Palembang', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21)),
+              const Text('Kota Palembang, Prov.Sumatera Selatan', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21)),
+              const SizedBox(height: 19,),
+
+              // Kontainer Info
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.red[900],
+                ),
+                child: const Padding(
                   padding: EdgeInsets.all(16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      //TODO Baris berisi info
                       Row(
                         children: [
                           Expanded(
@@ -60,7 +52,6 @@ class LatihanScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,99 +66,61 @@ class LatihanScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      
                       SizedBox(height: 20,),
-
                       Row(
                         children: [
                           Expanded(child: Column(
-                              children: [
+                            children: [
                               Icon(Icons.phone, color: Colors.white,),
-                              const SizedBox(width: 18,),
-                              Text(
-                                '071-0897-021',
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white
-                                ),
-                              )
+                              SizedBox(width: 18,),
+                              Text('071-0897-021', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white)),
                             ],
                           )),
-
                           Expanded(child: Column(
-                              children: [
+                            children: [
                               Icon(Icons.mail, color: Colors.white,),
-                              const SizedBox(width: 18,),
-                              Text(
-                                'kuliah@mdp.ac.id',
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white
-                                ),
-                              )
+                               SizedBox(width: 18,),
+                              Text('kuliah@mdp.ac.id', style:  TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white)),
                             ],
                           )),
-
                           Expanded(child: Column(
-                              children: [
+                            children: [
                               Icon(Icons.web, color: Colors.white,),
-                              const SizedBox(width: 18,),
-                              Text(
-                                '@universitasmdp',
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white
-                                ),
-                              )
+                               SizedBox(width: 18,),
+                              Text('@universitasmdp', style:  TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white)),
                             ],
                           )),
-
                           Expanded(child: Column(
-                              children: [
+                            children: [
                               Icon(Icons.perm_media, color: Colors.white,),
-                              const SizedBox(width: 18,),
-                              Text(
-                                'mdp.ac.id',
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white
-                                ),
-                              )
+                               SizedBox(width: 18,),
+                              Text('mdp.ac.id', style:  TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white)),
                             ],
                           )),
                         ],
                       ),
-
                       SizedBox(height: 10,),
                     ],
-                  )
-              ),
-            ),
-
-            SizedBox(height: 20,),
-            
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: const Color.fromARGB(255, 121, 121, 121),
-              ),
-
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    
-                  ],
+                  ),
                 ),
               ),
-            )
-
-            
-          ],
+              const SizedBox(height: 20,),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color.fromARGB(255, 121, 121, 121),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      // Tambahkan konten lain di sini jika diperlukan
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
