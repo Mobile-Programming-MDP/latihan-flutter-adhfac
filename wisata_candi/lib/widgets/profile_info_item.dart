@@ -27,10 +27,10 @@ class ProfileInfoItem extends StatelessWidget {
           child: Row(
             children: [
               Icon(icon, color: iconColor,),
-              SizedBox(width: 8,),
+              const SizedBox(width: 8,),
               Text(
                 label,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Cascadia'
@@ -39,10 +39,11 @@ class ProfileInfoItem extends StatelessWidget {
             ],
           ),
         ),
+
         Expanded(
-          child: Text(': $value', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+          child: Text(': $value', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, fontFamily: 'Cascadia'),),
         ),
-        if(showEditIcon) InkWell(onTap: onEditPressed, child: Icon(Icons.edit),)
+        if(showEditIcon) InkWell(onTap: onEditPressed, child: const Icon(Icons.edit),)
       ],
     );
   }

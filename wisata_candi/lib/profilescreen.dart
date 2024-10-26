@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wisata_candi/widgets/profile_info_item.dart';
 
 class Profilescreen extends StatefulWidget {
   const Profilescreen({super.key});
@@ -14,7 +15,7 @@ class _ProfilescreenState extends State<Profilescreen> {
   String userName = 'adhfac';
   int favouriteCandiCount= 0;
 
-  // TODO 5 : Implementasu fungsi SignIn
+  // TODO 5 : Implementasi fungsi SignIn
   void signIn (){
     setState(() {
       isSignedIn = !isSignedIn;
@@ -54,7 +55,7 @@ class _ProfilescreenState extends State<Profilescreen> {
                             border: Border.all(color: Colors.deepPurple, width: 2),
                             shape: BoxShape.circle,
                           ),
-                          child: CircleAvatar(
+                          child: const CircleAvatar(
                             radius: 50,
                             backgroundImage: AssetImage('images/placeholder_image.png'),
                           ),
@@ -70,119 +71,45 @@ class _ProfilescreenState extends State<Profilescreen> {
                 ),
 
               // TODO 3: Buat bagian Profile Info
-                const SizedBox(
-                  height: 20,
-                ),
-
+                // Row ke 1
+                const SizedBox(height: 20,),
                 Divider(color: Colors.deepPurple[100],),
-
-                const SizedBox(
-                  height: 4,
-                ),
-
-                Row(
-                  children: [
-                    SizedBox(width: MediaQuery.of(context).size.width/3,
-                      child: Row(
-                        children: [
-                          Icon(Icons.lock, color: Colors.amber,),
-                          SizedBox(width: 8,),
-                          Text(
-                            'Pengguna', style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Cascadia'
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    Expanded(
-                      child: Text(': $userName', style: TextStyle(
-                        fontSize: 18,
-                        fontFamily: 'Cascadia'
-                      ),),
-                    ),
-                  ],
-                ),
+                const SizedBox(height: 4,),
+                ProfileInfoItem(icon: Icons.lock, label: 'Pengguna', value: userName, iconColor: Colors.amber),
 
                 // Row ke 2
-                
                 const SizedBox(
                   height: 4,
                 ),
-
                 Divider(color: Colors.deepPurple[100],),
-
                 const SizedBox(
                   height: 4,
                 ),
+                ProfileInfoItem(
+                  icon: Icons.person,
+                  label: 'Nama',
+                  value: fullName,
+                  iconColor: Colors.deepPurple,
+                  showEditIcon: isSignedIn,
+                  onEditPressed: () {
+                      debugPrint('Icon Edit Saat Ditekan...');
+                  },
 
-                Row(
-                  children: [
-                    SizedBox(width: MediaQuery.of(context).size.width/3,
-                      child: Row(
-                        children: [
-                          Icon(Icons.person, color: Colors.blue,),
-                          SizedBox(width: 8,),
-                          Text(
-                            'Nama', style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Cascadia'
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    Expanded(
-                      child: Text(': $fullName', style: TextStyle(
-                        fontSize: 18,
-                        fontFamily: 'Cascadia'
-                      ),),
-                    ),
-                    
-                    if(isSignedIn) Icon(Icons.edit),
-                  ],
                 ),
-                
+
+                // Row ke 3
                 const SizedBox(
                   height: 4,
                 ),
-
                 Divider(color: Colors.deepPurple[100],),
-
                 const SizedBox(
                   height: 4,
                 ),
-
-                Row(
-                  children: [
-                    SizedBox(width: MediaQuery.of(context).size.width/3,
-                      child: Row(
-                        children: [
-                          Icon(Icons.favorite, color: Colors.red,),
-                          SizedBox(width: 8,),
-                          Text(
-                            'Favorit', style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Cascadia'
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    Expanded(
-                      child: Text(': $favouriteCandiCount', style: TextStyle(
-                        fontSize: 18,
-                        fontFamily: 'Cascadia'
-                      ),),
-                    ),
-                  ],
+                ProfileInfoItem(
+                    icon: Icons.favorite,
+                    label: 'Favorit',
+                    value: favouriteCandiCount > 0 ? '$favouriteCandiCount' : '0',
+                    iconColor: Colors.pinkAccent
                 ),
 
                 // TODO 4: Buat bagian profile action
@@ -196,9 +123,9 @@ class _ProfilescreenState extends State<Profilescreen> {
                   height: 20,
                 ),
 
-                isSignedIn ? TextButton(onPressed: signOut, child: Text('Sign Out', style: TextStyle(
+                isSignedIn ? TextButton(onPressed: signOut, child: const Text('Sign Out', style: TextStyle(
                         fontFamily: 'Cascadia'
-                      ))) : TextButton(onPressed: signIn, child: Text('Sign In', style: TextStyle(
+                      ))) : TextButton(onPressed: signIn, child: const Text('Sign In', style: TextStyle(
                         fontFamily: 'Cascadia'
                       ))),
               ],
