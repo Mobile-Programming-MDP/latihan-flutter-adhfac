@@ -36,7 +36,7 @@ class _ProfilescreenState extends State<Profilescreen> {
           Container(
             height: 200,
             width: double.infinity,
-            color: Colors.deepPurple,
+            color: const Color.fromARGB(255, 83, 113, 72),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -52,7 +52,7 @@ class _ProfilescreenState extends State<Profilescreen> {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.deepPurple, width: 2),
+                            border: Border.all(color: const Color.fromARGB(255, 83, 115, 79), width: 2),
                             shape: BoxShape.circle,
                           ),
                           child: const CircleAvatar(
