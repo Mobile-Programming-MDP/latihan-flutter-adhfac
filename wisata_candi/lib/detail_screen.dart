@@ -37,7 +37,9 @@ class DetailScreen extends StatelessWidget {
                       color: Colors.deepPurple[100]?.withOpacity(0.8),
                       shape: BoxShape.circle
                     ),
-                    child: IconButton(onPressed: (){}, icon: const Icon(
+                    child: IconButton(onPressed: (){
+                      Navigator.pop(context);
+                    }, icon: const Icon(
                       Icons.arrow_back
                     )),
                   ),
