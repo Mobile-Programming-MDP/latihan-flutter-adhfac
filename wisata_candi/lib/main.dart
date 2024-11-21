@@ -5,6 +5,8 @@ import 'package:wisata_candi/favorite_screen.dart';
 import 'package:wisata_candi/home_screen.dart';
 import 'package:wisata_candi/profilescreen.dart';
 import 'package:wisata_candi/search_screen.dart';
+import 'package:wisata_candi/sign_up_screen.dart';
+import 'package:wisata_candi/signin_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -20,7 +22,7 @@ class MainApp extends StatelessWidget {
       // home: DetailScreen(
       //   candi: candiList[0],
       // ),
-      home: MainScreen(),
+      home: SignUpScreen(),
     );
   }
 }
@@ -72,8 +74,6 @@ class _MainScreenState extends State<MainScreen> {
           showUnselectedLabels: true,
         ),
       ),
-      
-      
       // 3. Buat data dari child dari Theme
     );
   }
